@@ -1,0 +1,145 @@
+.newsInner {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding-top: 14vw;
+
+    @include tablet() {
+        padding-top: 25vw;
+    }
+
+    .banner-page {
+        width: 56.2%;
+        margin: 0 auto 8.5vw;
+
+        @include tablet() {
+            width: 82.5%;
+        }
+
+        .imgBox {
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: pxConvertor(694);
+                object-fit: cover;
+
+                @include tablet() {
+                    height: pxConvertor2(391.56);
+                }
+            }
+        }
+
+        .titleBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 3.5vw 0 2vw;
+
+            @include tablet() {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .date {
+                font-size: pxConvertor(20);
+                letter-spacing: 0.1em;
+                color: #333333;
+                opacity: 0.8;
+                font-weight: 500;
+
+                @include tablet() {
+                    order: -1;
+                    opacity: 1;
+                    font-size: pxConvertor2(26);
+                    color: #000;
+                    font-weight: 700;
+
+                }
+            }
+
+            .title {
+                font-size: var(--ch_m_text);
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                color: #333333;
+
+                @include tablet() {
+                    font-size: var(--ch_ml_text);
+                    margin: 1vw 0 6vw;
+                }
+            }
+        }
+
+        .paraBox {
+            p {
+                @include para();
+
+                @include tablet() {
+                    font-size: var(--ch_m_text);
+                    line-height: 1.9;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1.6vw;
+
+                    @include tablet() {
+                        margin-bottom: 8vw;
+                    }
+                }
+            }
+            h1,h2,h3,h4{
+                margin-bottom: 1.6vw;
+                @include tablet() {
+                    margin-bottom: 8vw;
+                }
+            }
+        }
+
+        .gradient-square {
+
+            .box {
+                &:nth-child(1) {
+                    width: pxConvertor(122);
+                    height: pxConvertor(235);
+                    top: pxConvertor(364);
+                    left: pxConvertor(10);
+
+
+                }
+
+                &:nth-child(2) {
+                    width: pxConvertor(237.25);
+                    height: pxConvertor(457);
+                    top: pxConvertor(211);
+                    left: pxConvertor(76);
+                }
+
+
+
+                &:nth-child(3) {
+                    width: pxConvertor(114.33);
+                    height: pxConvertor(220.23);
+                    top: pxConvertor(661);
+                    left: pxConvertor(1716);
+                }
+
+                &:nth-child(4) {
+                    width: pxConvertor(90.33);
+                    height: pxConvertor(174);
+                    top: 57vw;
+                    left: pxConvertor(0);
+                }
+
+                &:nth-child(5) {
+                    width: pxConvertor(90.33);
+                    height: pxConvertor(174);
+                    top: 59.5vw;
+                    left: pxConvertor(57);
+                }
+            }
+        }
+    }
+}

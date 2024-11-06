@@ -1,0 +1,108 @@
+@import "_config";
+@import "_index";
+@import "_news";
+@import "_newsInner";
+@import "_service";
+@import "_portfolio";
+@import "_project";
+@import "_projectInner";
+@import "_about";
+@import "_progress";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Noto Serif TC", serif;
+}
+
+body {
+  // overflow: hidden;
+  background-image: url("../../img/index/webp/index-bg.webp");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 100vh;
+
+  > canvas {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0.1;
+    filter: grayscale(0.95) brightness(30);
+    mix-blend-mode: screen;
+
+    @include tablet() {
+      opacity: 0.07;
+      height: 155vw;
+    }
+
+    @include mobile() {
+      height: 450vw;
+      top: -110vw;
+    }
+  }
+
+  @include tablet() {
+    background-image: url("../../img/index/webp/index-bg-ph.jpg");
+  }
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+  display: none;
+
+  @include tablet() {
+    display: block;
+  }
+}
+
+.g-recaptcha {
+  width: 305px;
+  margin: auto;
+}
+
+@keyframes circle-draw {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+
+  100% {
+    stroke-dashoffset: 1795;
+  }
+}
+
+@keyframes circle-draw2 {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 555;
+    opacity: 0;
+  }
+}
+
+@keyframes dotCircle {
+  0% {
+    rotate: -138deg;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    rotate: 140deg;
+    opacity: 0;
+  }
+}

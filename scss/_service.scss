@@ -1,0 +1,877 @@
+.service {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+
+
+    .contentBox {
+        position: relative;
+        width: 100%;
+        margin: 6vw auto 3vw;
+
+        @include tablet() {
+            margin: 8vw auto 10vw;
+        }
+
+        >div {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 0;
+            opacity: 0;
+            transition: 0.6s;
+            z-index: 1;
+            pointer-events: none;
+
+            @include tablet() {
+                width: 82.5%;
+            }
+
+            .second-page {
+                .top {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: -13vw;
+
+                    @include tablet() {
+                        position: static;
+                        margin-bottom: 5vw;
+                    }
+
+                    .paraBox {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 1.5vw;
+
+                        .title {
+                            position: relative;
+                            font-size: var(--ch_mml_text);
+                            letter-spacing: 0.1em;
+                            font-weight: 500;
+                            margin-bottom: 2vw;
+
+                            @include tablet() {
+                                margin-bottom: 4.5vw;
+                                font-size: var(--ch_ml_text);
+                            }
+
+                            &::after {
+                                display: block;
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                width: 4.5vw;
+                                height: 1px;
+                                background-color: #000;
+                                bottom: -0.8vw;
+                                transform: scaleX(0);
+                                transition: 0.6s;
+
+                                @include tablet() {
+                                    width: 12vw;
+                                    bottom: -1.8vw;
+                                }
+                            }
+
+                        }
+
+                        .title-active {
+                            &::after {
+                                transform: scaleX(1)
+                            }
+                        }
+
+                        .para {
+                            @include para();
+                            font-size: var(--ch_xs_text);
+                            width: pxConvertor(415);
+                            margin-bottom: 1vw;
+                            color: #333;
+                            text-align: center;
+
+                            @include tablet() {
+                                font-size: var(--ch_m_text);
+                                width: 100%;
+                                font-weight: 500;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        .repair {
+
+            .second-page {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                width: 52.5%;
+                margin: 0 auto 10vw;
+
+                @include tablet() {
+                    display: block;
+                    width: 100%;
+                }
+
+                >.left,
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 36.5%;
+
+                    @include tablet() {
+                        width: 100%;
+                        margin-bottom: 7vw;
+                    }
+
+                    .titleBox {
+                        display: flex;
+                        margin-bottom: 1.2vw;
+
+                        @include tablet() {
+                            align-items: center;
+                            margin-bottom: 6vw;
+                        }
+
+                        img {
+                            width: pxConvertor(22);
+                            margin-right: 0.5vw;
+
+                            @include tablet() {
+                                width: pxConvertor2(42);
+                                margin-right: 1.5vw;
+
+                            }
+                        }
+
+                        h4 {
+                            font-size: pxConvertor(24);
+                            letter-spacing: 0.15em;
+                            color: #333;
+                            font-weight: 400;
+
+                            @include tablet() {
+                                font-size: var(--ch_ml_text);
+                                font-weight: 600;
+                            }
+
+                        }
+                    }
+
+                    .paraBox {
+                        p {
+                            position: relative;
+                            font-size: pxConvertor(20);
+                            color: #333;
+                            letter-spacing: 0.15em;
+                            line-height: 1.6;
+
+                            @include tablet() {
+                                font-size: var(--ch_m_text);
+                                font-weight: 400;
+                                font-family: "Microsoft JhengHei", serif;
+                            }
+
+                            &:not(:last-child) {
+                                margin-bottom: 0.8vw;
+                            }
+
+                            &::after {
+                                display: block;
+                                content: "";
+                                position: absolute;
+                                left: -0.8vw;
+                                top: 0.8em;
+                                width: 0.2vw;
+                                height: 0.2vw;
+                                border-radius: 50%;
+                                background-color: #333;
+
+                                @include tablet() {
+                                    width: 1vw;
+                                    height: 1vw;
+                                    left: -2vw;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
+                .contact-box {
+                    position: absolute;
+                    left: 0;
+                    bottom: -7vw;
+
+                    @include tablet() {
+                        position: static;
+                    }
+
+                    .service-online {
+                        font-size: var(--ch_s_text);
+                        color: #333;
+                        font-weight: 500;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 0.5vw;
+
+                        @include tablet() {
+                            font-size: var(--ch_ml_text);
+                            opacity: 1;
+                            text-align: center;
+                            margin-bottom: 4vw;
+                        }
+
+                        span {
+                            font-size: pxConvertor(14);
+                            font-weight: 400;
+
+                            @include tablet() {
+                                display: block;
+                                font-size: var(--ch_m_text);
+                            }
+                        }
+                    }
+
+                    .service-time,
+                    .phone {
+                        display: block;
+                        @include para();
+                        font-size: var(--ch_xs_text);
+                        color: #333;
+                        line-height: 1.8;
+
+                        @include tablet() {
+                            font-size: var(--ch_m_text);
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .phone {
+                        margin-left: 0vw;
+
+                        @include tablet() {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                &::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 1.5px;
+                    height: 115%;
+                    background-color: #333;
+                    opacity: 0.15;
+
+                    @include tablet() {
+                        display: none;
+                    }
+                }
+            }
+
+            .third-page {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+                .title {
+                    font-size: pxConvertor(24);
+                    letter-spacing: 0.15em;
+                    color: #333;
+                    font-weight: 600;
+                    margin-bottom: 5vw;
+
+                    @include tablet() {
+                        font-size: var(--ch_ml_text);
+                        margin-bottom: 10vw;
+                    }
+                }
+
+                img {
+                    width: 65%;
+                    height: auto;
+
+                    @include tablet() {
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+
+        .assurance {
+            padding-bottom: 2vw;
+
+            @include tablet() {
+                padding-bottom: 0;
+            }
+
+            .bottom {
+                display: flex;
+                justify-content: center;
+
+                div {
+                    position: relative;
+                    z-index: 1;
+                    width: pxConvertor(1125);
+
+                    svg {
+                        width: 100%;
+                        height: auto;
+
+                        .line {
+                            stroke-dasharray: 2000;
+                            stroke-dashoffset: 2000;
+                        }
+
+                    }
+
+
+                }
+
+                img {
+                    width: 60vw;
+
+                    @include tablet() {
+                        width: 70vw;
+                    }
+                }
+
+                .sign {
+                    position: absolute;
+                    right: 0;
+                    bottom: -10vw;
+                    width: pxConvertor(709);
+                    height: auto;
+                    z-index: 0;
+
+                    @include tablet() {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .calculator {
+            margin-top: -2.5vw;
+
+            @include tablet() {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding: 0 10vw;
+                margin: 0;
+            }
+
+            .second-page {
+
+
+                .top {
+                    top: -10vw;
+                }
+
+                .bottom {
+                    display: flex;
+                    width: pxConvertor(1529);
+                    margin: 0 auto;
+                    padding: pxConvertor(30) pxConvertor(110);
+                    background-color: #ffffff42;
+
+                    @include tablet() {
+                        display: block;
+                        padding: 0;
+                        padding: 3.5vw 0 17vw;
+                    }
+
+                    >div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+
+                        @include tablet() {
+                            width: 100%;
+                        }
+                    }
+
+                    .left {
+                        .input-area {
+                            @include tablet() {
+                                width: 85%;
+                            }
+
+                            .input-box {
+                                display: flex;
+
+                                &:not(:last-child) {
+                                    margin-bottom: pxConvertor(42);
+
+                                    @include tablet() {
+                                        margin-bottom: 5vw;
+                                    }
+                                }
+
+                                p {
+                                    @include para();
+                                    font-weight: 500;
+                                    font-family: 'Noto Serif TC', serif;
+                                }
+
+                                .title {
+                                    width: 6vw;
+
+                                    @include tablet() {
+                                        width: 35%;
+                                    }
+                                }
+
+                                //隱藏number的箭頭
+                                input::-webkit-outer-spin-button,
+                                input::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+
+                                /* Firefox */
+                                input[type=number] {
+                                    -moz-appearance: textfield;
+                                }
+
+                                input {
+                                    width: pxConvertor(302);
+                                    background-color: transparent;
+                                    border: none;
+                                    border-bottom: 1px solid #6666669c;
+                                    font-size: var(--ch_m_text);
+                                    font-weight: 600;
+                                    text-align: center;
+
+                                    @include tablet() {
+                                        width: 50%;
+                                    }
+
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+
+                                .unit {
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 4vw;
+
+                                    @include tablet() {
+                                        width: 15%;
+                                    }
+                                }
+                            }
+
+                            >p {
+                                @include para();
+                                font-size: var(--ch_xs_text);
+                                font-weight: 500;
+                                opacity: 0;
+                                transition: 0.3s;
+
+                                @include tablet() {
+                                    text-align: center;
+                                }
+
+                                span {
+                                    font-size: var(--ch_s_text);
+                                    margin: 0 0.6vw;
+                                }
+                            }
+                        }
+
+                        .check-btn {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: pxConvertor(259);
+                            height: pxConvertor(36.4484);
+                            font-size: var(--ch_xs_text);
+                            letter-spacing: 0.05em;
+                            color: #fff;
+                            background-color: #6b8786;
+                            border: none;
+                            cursor: pointer;
+                            margin-top: 2vw;
+
+                            @include tablet() {
+                                width: pxConvertor2(259);
+                                height: pxConvertor2(50);
+                                margin: 2vw auto 15vw;
+                            }
+                        }
+                    }
+
+                    .right {
+
+                        .result-area {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            align-items: center;
+                            width: 50%;
+                            height: 80%;
+
+                            @include tablet() {
+                                width: 100%;
+                                height: 65vw;
+                            }
+
+                            p {
+                                margin-top: 1.2vw;
+                                @include para();
+                                font-size: var(--ch_xs_text);
+                                font-weight: 500;
+                            }
+
+                            .labels {
+                                position: absolute;
+                                display: flex;
+                                width: fit-content;
+                                top: -2vw;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                opacity: 0;
+                                transition: 0.3s;
+
+                                @include tablet() {
+                                    top: -7vw;
+                                }
+
+                                .box {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-right: 5px;
+
+                                    p {
+                                        margin: 0;
+                                        margin-left: 5px;
+                                    }
+                                }
+
+                                .color {
+                                    width: 40px;
+                                    height: 12px;
+
+                                }
+
+                                &> :nth-child(1) {
+                                    .color {
+                                        background-color: #6b8786;
+                                    }
+                                }
+
+                                &> :nth-child(2) {
+                                    .color {
+                                        background-color: #c7b299;
+                                    }
+                                }
+                            }
+
+                            #myChart {
+                                position: absolute;
+                                top: 0.8vw;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                            }
+
+                            >p {
+
+                                position: absolute;
+                                width: fit-content;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                bottom: -2vw;
+
+                                @include tablet() {
+                                    bottom: -10vw;
+                                }
+                            }
+
+                            .resultBox {
+                                p {
+                                    @include para();
+                                    font-weight: 600;
+                                    text-align: center;
+                                    line-height: 1.6;
+
+                                    .result {
+                                        font-size: pxConvertor(36);
+                                        margin-right: 0.6vw;
+
+                                        @include tablet() {
+                                            font-size: pxConvertor2(72);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .contact {
+
+            .second-page {
+                .top {
+                    .paraBox {
+                        .para {
+                            width: pxConvertor(595);
+
+                            @include tablet() {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+            .bottom {
+                display: flex;
+                justify-content: center;
+
+                form {
+                    width: pxConvertor(595);
+
+                    @include tablet() {
+                        width: 100%;
+                    }
+
+                    .formBox {
+                        display: flex;
+                        width: 100%;
+
+                        label {
+                            font-size: var(--ch_s_text);
+                            color: #333;
+                            letter-spacing: 2em;
+                            white-space: nowrap;
+                        }
+
+                        input,
+                        textarea {
+                            flex-grow: 1;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid #6666669c;
+                            font-size: var(--ch_s_text);
+                            padding-bottom: 1vw;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 1.5vw;
+
+                            @include tablet() {
+                                margin-bottom: 6vw;
+                            }
+                        }
+                    }
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: pxConvertor(298.8);
+                        height: pxConvertor(38.5);
+                        background-color: #6b8786;
+                        color: #fff;
+                        font-size: pxConvertor(14);
+                        letter-spacing: 0.05em;
+                        border: none;
+                        margin: 2vw auto 0;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        @include tablet() {
+                            width: pxConvertor2(259);
+                            height: pxConvertor2(63.5);
+                            font-size: pxConvertor2(28);
+                        }
+
+                        &:hover {
+                            width: pxConvertor(180);
+                        }
+                    }
+                }
+            }
+        }
+
+        .active {
+            position: static;
+            pointer-events: auto;
+            opacity: 1;
+            z-index: 12;
+        }
+
+        .gradient-square {
+            z-index: 10;
+            opacity: 1;
+
+            .box {
+                &:nth-child(1) {
+                    width: pxConvertor(99.2);
+                    height: pxConvertor(191);
+                    top: pxConvertor(364);
+                    left: pxConvertor(10);
+
+                    @include tablet() {
+                        width: pxConvertor2(68.9);
+                        height: pxConvertor2(268.7);
+                        top: -30vw;
+                        left: -8.5vw;
+                    }
+
+                }
+
+                &:nth-child(2) {
+                    width: pxConvertor(99.2);
+                    height: pxConvertor(95.5);
+                    top: pxConvertor(410);
+                    left: pxConvertor(76);
+
+                    @include tablet() {
+                        width: pxConvertor2(105.7);
+                        height: pxConvertor2(203.63);
+                        top: 18vw;
+                        left: auto;
+                        right: -8.5vw;
+                    }
+                }
+
+                &:nth-child(3) {
+                    width: pxConvertor(101);
+                    height: pxConvertor(194.7);
+                    top: pxConvertor(579);
+                    right: 1vw;
+
+                    @include tablet() {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .navBox {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        left: 2vw;
+        height: 10vw;
+        z-index: 30;
+
+        @include tablet() {
+            display: flex;
+            position: static;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw 0;
+        }
+
+        li {
+            position: relative;
+            cursor: pointer;
+
+            p {
+                color: #6A6A6B;
+                font-size: pxConvertor(20);
+                letter-spacing: 0.15em;
+                transition: 0.3s;
+                pointer-events: none;
+
+                @include tablet() {
+                    font-size: var(--ch_m_text);
+                    font-weight: 600;
+                    color: #000;
+                    margin-bottom: 0.2vw;
+                }
+
+                span {
+                    font-size: pxConvertor(16);
+                    font-family: 'Cormorant Garamond', serif;
+                    letter-spacing: 0;
+
+                    @include tablet() {
+                        display: none;
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1.2vw;
+
+                @include tablet() {
+                    margin-bottom: 0;
+                    margin-right: 5vw;
+                }
+
+                &::after {
+                    @include tablet() {
+                        display: block;
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        right: -2.5vw;
+                        width: 1px;
+                        height: 60%;
+                        background-color: #000;
+                    }
+                }
+            }
+
+
+        }
+
+        .active {
+            p {
+                color: #6B8786;
+            }
+        }
+    }
+
+}

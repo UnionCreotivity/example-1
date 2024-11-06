@@ -1,0 +1,1273 @@
+.about {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+
+    .navBox {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        left: 2vw;
+        height: 10vw;
+        z-index: 30;
+
+        @include tablet() {
+            display: flex;
+            position: static;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw 0;
+        }
+
+        li {
+            position: relative;
+            cursor: pointer;
+
+            p {
+                color: #6A6A6B;
+                font-size: pxConvertor(20);
+                letter-spacing: 0.15em;
+                transition: 0.3s;
+                pointer-events: none;
+
+                @include tablet() {
+                    font-size: var(--ch_m_text);
+                    font-weight: 600;
+                    color: #000;
+                    margin-bottom: 0.2vw;
+                }
+
+                span {
+                    font-size: pxConvertor(16);
+                    font-family: 'Cormorant Garamond', serif;
+                    letter-spacing: 0;
+
+                    @include tablet() {
+                        display: none;
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1.2vw;
+
+                @include tablet() {
+                    margin-bottom: 0;
+                    margin-right: 5vw;
+                }
+
+                &::after {
+                    @include tablet() {
+                        display: block;
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        right: -2.5vw;
+                        width: 1px;
+                        height: 60%;
+                        background-color: #000;
+                    }
+                }
+            }
+
+
+        }
+
+        .active {
+            pointer-events: none;
+
+            p {
+                color: #6B8786;
+            }
+        }
+    }
+
+    .contentBox {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        >div {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .brand {
+            display: block;
+
+            .titleBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 5vw;
+
+                @include tablet() {
+                    margin-bottom: 16vw;
+                }
+
+                h2 {
+                    position: relative;
+                    font-size: var(--ch_m_text);
+                    letter-spacing: 0.05em;
+                    font-weight: 500;
+
+                    &::after {
+                        @include tablet() {
+                            display: block;
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            left: 0;
+                            bottom: -4vw;
+                            margin: 0 auto;
+                            width: 12vw;
+                            height: 1px;
+                            background-color: #000;
+                        }
+                    }
+
+                    @include tablet() {
+                        font-size: pxConvertor2(42);
+                    }
+                }
+            }
+
+            .conceptBox {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 12vw;
+
+                .swiper {
+                    width: pxConvertor(456);
+                    height: pxConvertor(456);
+                    margin: 0;
+                    background-image: url(../../img/about/jpg/second-page-round.png);
+                    background-size: cover;
+                    margin-right: -2.5vw;
+
+                    @include tablet() {
+                        position: absolute;
+                        width: pxConvertor2(420);
+                        height: pxConvertor2(420);
+                        left: 21.5vw;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                    }
+
+                    .swiper-wrapper {
+                        width: 100%;
+                        height: 100%;
+
+                        .swiper-slide {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+
+                            h4 {
+                                color: #6B8786;
+                                font-size: var(--ch_xl_text);
+                                text-align: center;
+                                font-weight: 500;
+                                margin-bottom: 0.5vw;
+                            }
+
+                            p {
+                                font-family: "Microsoft JhengHei", serif;
+                                font-size: var(--ch_s_text);
+                                color: #333333ab;
+                                text-align: center;
+                                letter-spacing: 0.05em;
+                                line-height: 1.8;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
+                .svgBox {
+                    position: relative;
+                    width: pxConvertor(597.86);
+                    height: pxConvertor(597.86);
+                    margin-left: -2.5vw;
+
+                    @include tablet() {
+                        margin: 0;
+                        width: pxConvertor2(597.86);
+                        height: pxConvertor2(597.86);
+                        margin-left: 7vw;
+                    }
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        transform: scaleX(1.01);
+
+                        path {
+                            &:nth-child(2) {
+                                stroke-dasharray: 2000;
+                                animation-duration: 10s;
+                                animation-fill-mode: forwards;
+                                animation-iteration-count: infinite;
+                                animation-timing-function: linear;
+                            }
+                        }
+                    }
+
+                    .dotBox {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        position: absolute;
+                        left: 43.7%;
+                        transform-origin: left center;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        width: pxConvertor(305);
+                        height: 1vw;
+
+                        @include tablet() {
+                            width: pxConvertor2(310);
+                        }
+
+                        .dot {
+                            width: 0.6vw;
+                            height: 0.6vw;
+                            border-radius: 50%;
+                            background-color: #6B8786;
+
+                            @include tablet() {
+                                width: 2.5vw;
+                                height: 2.5vw;
+
+                            }
+                        }
+                    }
+
+                    p {
+                        position: absolute;
+                        font-size: pxConvertor(32);
+                        color: #6B8786;
+                        font-weight: 500;
+                        right: 3vw;
+
+                        @include tablet() {
+                            font-size: pxConvertor2(42);
+                            right: 9vw;
+                        }
+                    }
+
+                    >p {
+                        transition: transform 0.8s;
+                    }
+
+                    .yao {
+                        top: 1vw;
+
+                        @include tablet() {
+                            top: 0;
+                        }
+                    }
+
+                    .cheng {
+                        bottom: 1vw;
+
+                        @include tablet() {
+                            bottom: 0;
+                        }
+                    }
+                }
+
+                .videoBox {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    left: 1.2vw;
+                    width: 80%;
+                    height: 80%;
+                    border-radius: 50%;
+
+                    @include tablet() {
+                        left: 3vw;
+                    }
+                }
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            .gradient-square {
+                z-index: 10;
+
+                @include tablet() {
+                    display: none;
+                }
+
+                .box {
+                    &:nth-child(1) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        left: pxConvertor(146);
+                        top: pxConvertor(150);
+                    }
+
+                    &:nth-child(2) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        right: pxConvertor(238);
+                        top: pxConvertor(493);
+                    }
+
+                    &:nth-child(3) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        right: pxConvertor(183);
+                        top: pxConvertor(567);
+                    }
+
+                    &:nth-child(4) {
+                        width: pxConvertor(122.12);
+                        height: pxConvertor(235.23);
+                        left: pxConvertor(294.5);
+                        top: pxConvertor(1050);
+                    }
+
+                    &:nth-child(5) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        right: pxConvertor(261);
+                        top: pxConvertor(1350);
+                    }
+
+                    &:nth-child(6) {
+                        width: pxConvertor(83.28);
+                        height: pxConvertor(160.41);
+                        left: pxConvertor(87);
+                        top: pxConvertor(1990);
+                    }
+
+                    &:nth-child(7) {
+                        width: pxConvertor(161.95);
+                        height: pxConvertor(311.95);
+                        left: pxConvertor(132.05);
+                        top: pxConvertor(1886);
+                    }
+
+                    &:nth-child(8) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        right: pxConvertor(160);
+                        top: pxConvertor(2600);
+                    }
+                }
+            }
+
+            .second-page {
+
+                width: 80%;
+                margin: 0 auto;
+
+                .box {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 15vw;
+
+                    @include tablet() {
+                        flex-direction: column;
+                    }
+
+                    >div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+
+                        @include tablet() {
+                            width: 100%;
+                        }
+                    }
+
+                    .left {
+
+                        @include tablet() {
+                            margin-bottom: 15vw;
+                        }
+
+                        .imgBox {
+                            position: relative;
+                            width: pxConvertor(415);
+                            height: pxConvertor(614);
+
+                            @include tablet {
+                                width: 100%;
+                                height: pxConvertor2(649);
+                            }
+
+                            .gray-box {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            p {
+                                position: absolute;
+                                bottom: -0.3vw;
+                                right: -2.3vw;
+                                writing-mode: vertical-lr;
+                                font-size: pxConvertor(48);
+                                color: #799695;
+                                letter-spacing: 0.1em;
+                                font-family: 'Cormorant Garamond', serif;
+
+                                @include tablet() {
+                                    width: fit-content;
+                                    writing-mode: horizontal-tb;
+                                    left: 0;
+                                    right: 0;
+                                    margin: 0 auto;
+                                    bottom: -15vw;
+                                    font-size: pxConvertor2(48);
+                                    letter-spacing: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .right {
+                        align-items: flex-end;
+
+                        .paraBox {
+                            margin-bottom: -5vw;
+
+                            h6 {
+                                color: #1a1a1a;
+                                font-size: pxConvertor(24);
+                                letter-spacing: 0.05em;
+                                font-weight: 500;
+                                margin-bottom: 1.7vw;
+
+                                @include tablet() {
+                                    font-size: pxConvertor2(42);
+                                    text-align: center;
+                                }
+                            }
+
+                            p {
+                                line-height: 1.7;
+                                @include para();
+
+                                br {
+                                    @include tablet() {
+                                        display: none;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                &> :nth-child(even) {
+                    width: 87.5%;
+                    margin: 0 auto 5vw 0;
+
+                    @include tablet() {
+                        width: 100%;
+                        margin: 0 0 15vw;
+                    }
+
+                    .right {
+                        order: -1;
+
+                        @include tablet() {
+                            order: 3;
+                        }
+
+                        .paraBox {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .concept {
+            display: block;
+            width: 100%;
+
+            @include tablet() {
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: pxConvertor2(614);
+                padding-bottom: 0.5vw;
+            }
+
+            .second-page {
+                position: relative;
+                display: flex;
+                width: pxConvertor(948);
+                margin: 0 auto;
+                margin-bottom: 12vw;
+
+                @include tablet() {
+                    width: 100%;
+                    flex-direction: column;
+                }
+
+                .left {
+                    width: 70%;
+
+                    @include tablet() {
+                        width: 100%;
+                        margin-top: 15vw;
+                    }
+
+                    .paraBox {
+                        display: flex;
+                        flex-direction: column;
+                        width: 80%;
+
+                        @include tablet() {
+                            width: 100%;
+                        }
+
+                        h6 {
+                            width: fit-content;
+                            color: #1a1a1a;
+                            font-size: pxConvertor(24);
+                            letter-spacing: 0.2em;
+                            font-weight: 500;
+                            margin-bottom: 1.7vw;
+                            writing-mode: vertical-lr;
+                            align-self: flex-end;
+
+                            @include tablet() {
+                                align-self: center;
+                                font-size: pxConvertor2(42);
+                                text-align: center;
+                                writing-mode: horizontal-tb;
+                            }
+                        }
+
+                        p {
+                            margin-top: 4.5vw;
+                            line-height: 1.7;
+                            @include para();
+
+                            br {
+                                @include tablet() {
+                                    display: none;
+                                }
+                            }
+
+                            @include tablet() {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                }
+
+                .right {
+                    width: 30%;
+
+                    @include tablet() {
+                        width: 100%;
+                        order: -1;
+                    }
+
+                    .imgBox {
+                        position: relative;
+                        width: 100%;
+                        height: pxConvertor(580);
+
+                        @include tablet() {
+                            height: pxConvertor2(649);
+                        }
+
+                        .gray-box {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+
+
+                        p {
+                            position: absolute;
+                            bottom: -0.9vw;
+                            right: -5.8vw;
+                            writing-mode: vertical-lr;
+                            font-size: pxConvertor(120);
+                            color: #fff;
+
+                            letter-spacing: 0.1em;
+                            font-family: 'Cormorant Garamond', serif;
+
+                            @include tablet() {
+                                width: fit-content;
+                                writing-mode: horizontal-tb;
+                                color: #6b8786;
+                                filter: none;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                bottom: -15vw;
+                                font-size: pxConvertor2(48);
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+                }
+
+                >img {
+                    position: absolute;
+                    left: 3vw;
+                    top: 2vw;
+                    width: 80%;
+                    height: auto;
+                }
+            }
+
+            .third-page {
+                width: 100%;
+                margin-bottom: 10vw;
+
+                .top {
+                    position: relative;
+                    width: 100%;
+
+                    .imgBox {
+                        width: 100%;
+                        height: pxConvertor(520);
+
+                        @include tablet() {
+                            height: pxConvertor2(649);
+                        }
+
+                        .gray-box {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        p {
+                            position: absolute;
+                            right: 1vw;
+                            bottom: -1.8vw;
+                            font-size: pxConvertor(120);
+                            color: #ffffff80;
+
+                            letter-spacing: 0.1em;
+                            font-family: 'Cormorant Garamond', serif;
+
+                            @include tablet() {
+                                width: fit-content;
+                                writing-mode: horizontal-tb;
+                                color: #6b8786;
+                                filter: none;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                bottom: -15vw;
+                                font-size: pxConvertor2(48);
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+
+                    >img {
+                        position: absolute;
+                        width: pxConvertor(264);
+                        height: pxConvertor(307);
+                        object-fit: cover;
+                        left: pxConvertor(368);
+                        top: pxConvertor(169);
+
+                        @include tablet() {
+                            display: none;
+                        }
+
+                        &:nth-child(2) {
+                            width: pxConvertor(238);
+                            height: pxConvertor(311);
+                            object-fit: cover;
+                            left: pxConvertor(712);
+                            top: pxConvertor(343);
+                        }
+                    }
+                }
+
+                .bottom {
+                    position: relative;
+                    width: pxConvertor(1172);
+                    margin: 0 9vw 0 auto;
+
+                    @include tablet() {
+                        width: 100%;
+                        margin-top: 16vw;
+                    }
+
+                    .paraBox {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        @include tablet() {
+                            flex-direction: column;
+                        }
+
+                        h6 {
+                            width: fit-content;
+                            color: #1a1a1a;
+                            font-size: pxConvertor(24);
+                            letter-spacing: 0.2em;
+                            font-weight: 500;
+                            margin-bottom: 1.7vw;
+                            writing-mode: vertical-lr;
+                            text-align: end;
+
+                            br {
+                                @include tablet() {
+                                    display: none;
+                                }
+                            }
+
+                            @include tablet() {
+                                font-size: pxConvertor2(42);
+                                text-align: center;
+                                writing-mode: horizontal-tb;
+                            }
+                        }
+
+                        p {
+                            margin-top: 4.5vw;
+                            line-height: 1.7;
+                            @include para();
+
+                            br {
+                                @include tablet() {
+                                    display: none;
+                                }
+                            }
+
+                            @include tablet() {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    >img {
+                        position: absolute;
+                        bottom: 5.5vw;
+                        left: 1.2vw;
+                        width: 88%;
+                        height: auto;
+
+                        @include tablet() {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .forth-page {
+                margin-bottom: 8vw;
+
+                @include tablet() {
+                    margin-bottom: 10vw;
+                }
+
+                .top {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+
+                    @include tablet() {
+                        margin-bottom: 20vw;
+                    }
+
+                    .imgBox {
+                        position: relative;
+                        width: pxConvertor(1093);
+                        height: pxConvertor(386);
+
+                        @include tablet() {
+                            width: 100%;
+                            height: pxConvertor2(649);
+                        }
+
+                        .gray-box {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        p {
+                            position: absolute;
+                            right: 0vw;
+                            bottom: -3.5vw;
+                            font-size: pxConvertor(120);
+                            color: #ffffff80;
+
+                            letter-spacing: 0.1em;
+                            font-family: 'Cormorant Garamond', serif;
+
+                            @include tablet() {
+                                width: fit-content;
+                                writing-mode: horizontal-tb;
+                                color: #6b8786;
+                                filter: none;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                bottom: -15vw;
+                                font-size: pxConvertor2(48);
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+                }
+
+                .bottom {
+                    position: relative;
+                    width: pxConvertor(1229);
+                    margin: -3.2vw 13vw 0 auto;
+
+                    @include tablet() {
+                        width: 100%;
+                    }
+
+                    .paraBox {
+                        display: flex;
+                        width: 100%;
+
+                        @include tablet() {
+                            flex-direction: column;
+                        }
+
+                        h6 {
+                            width: fit-content;
+                            color: #1a1a1a;
+                            font-size: pxConvertor(24);
+                            letter-spacing: 0.2em;
+                            font-weight: 500;
+                            margin-bottom: 1.7vw;
+                            writing-mode: vertical-lr;
+                            text-align: end;
+                            margin-bottom: -4vw;
+                            margin-left: 22vw;
+
+                            br {
+                                @include tablet() {
+                                    display: none;
+                                }
+                            }
+
+                            @include tablet() {
+                                width: 100%;
+                                order: -1;
+                                font-size: pxConvertor2(42);
+                                text-align: center;
+                                writing-mode: horizontal-tb;
+                                margin: 0;
+                                margin-bottom: 1.5vw;
+                            }
+                        }
+
+                        p {
+                            line-height: 1.7;
+                            @include para();
+
+                            br {
+                                @include tablet() {
+                                    display: none;
+                                }
+                            }
+
+                        }
+                    }
+
+                    >img {
+                        position: absolute;
+                        bottom: -1vw;
+                        left: 3.8vw;
+                        width: 92%;
+                        height: auto;
+
+                        @include tablet() {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .gradient-square {
+                .box {
+                    @include tablet() {
+                        display: none;
+                    }
+
+                    &:nth-child(1) {
+                        width: pxConvertor(95);
+                        height: pxConvertor(183);
+                        top: pxConvertor(265);
+                        left: pxConvertor(144);
+                    }
+
+                    &:nth-child(2) {
+                        width: pxConvertor(122.12);
+                        height: pxConvertor(235.23);
+                        top: pxConvertor(212);
+                        left: pxConvertor(224);
+                    }
+
+                    &:nth-child(3) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        top: pxConvertor(519);
+                        right: pxConvertor(113);
+                    }
+
+                    &:nth-child(4) {
+                        width: pxConvertor(98.12);
+                        height: pxConvertor(189);
+                        top: pxConvertor(1484);
+                        left: pxConvertor(262);
+                    }
+
+                    &:nth-child(5) {
+                        width: pxConvertor(101);
+                        height: pxConvertor(194.55);
+                        top: pxConvertor(1525);
+                        left: pxConvertor(323);
+                    }
+
+                    &:nth-child(6) {
+                        width: pxConvertor(122);
+                        height: pxConvertor(235);
+                        top: pxConvertor(2605);
+                        left: pxConvertor(140);
+                    }
+
+                    &:nth-child(7) {
+                        width: pxConvertor(122.12);
+                        height: pxConvertor(235.23);
+                        top: pxConvertor(2840);
+                        right: pxConvertor(255.88);
+                    }
+                }
+            }
+        }
+
+        .vision {
+            position: absolute;
+            padding: 5vw 0 10vw;
+
+            @include tablet() {
+                padding-top: 10vw;
+            }
+
+            .second-page {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                width: 75%;
+                margin: 0 auto;
+                padding-right: 20vw;
+
+                @include tablet() {
+                    width: 100%;
+                    padding-right: 0;
+                    padding-bottom: 32vw;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .visionBox {
+                    position: relative;
+                    width: pxConvertor(431);
+                    height: pxConvertor(431);
+
+                    @include tablet() {
+                        width: pxConvertor2(369.5);
+                        height: pxConvertor2(369.5);
+                        margin-right: 10vw;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .paraBox {
+                        position: absolute;
+                        width: fit-content;
+                        height: fit-content;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+
+
+                        h6 {
+                            font-size: pxConvertor(36);
+                            color: #6B8786;
+                            letter-spacing: 0.1em;
+                            font-family: 'Cormorant Garamond', serif;
+                            font-weight: 400;
+                            margin-bottom: 0.5vw;
+                            text-align: center;
+
+                            @include tablet() {
+                                font-size: pxConvertor2(32);
+                            }
+                        }
+
+                        p {
+                            text-align: center;
+                            color: #333;
+                            line-height: 1.7;
+                            font-size: var(--ch_m_text);
+                            font-weight: 600;
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                }
+
+                .rotateBox {
+                    position: absolute;
+                    left: 11.83vw;
+                    top: -5vw;
+                    width: pxConvertor(608);
+                    height: pxConvertor(608);
+                    border-radius: 50%;
+                    border: 1px solid #00000028;
+
+                    @include tablet() {
+                        width: pxConvertor2(520.421);
+                        height: pxConvertor2(520.421);
+
+                        @include tablet() {
+                            top: -9.3vw;
+                        }
+                    }
+
+                    .outerBox {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: opacity 0.3s, transform 1s;
+                        pointer-events: none;
+                        opacity: 0.6;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        .box {
+                            transition: transform 1s;
+                            left: 75%;
+                            top: 0;
+
+                            @include tablet() {
+                                left: 82.5%;
+                            }
+                        }
+
+                    }
+
+                    .outerBox-active {
+                        opacity: 1;
+
+                    }
+
+
+
+                    .box {
+                        position: absolute;
+                        cursor: pointer;
+                        pointer-events: auto;
+
+                        .imgBox {
+                            width: pxConvertor(165.52);
+                            height: pxConvertor(165.52);
+                            border-radius: 50%;
+
+                            @include tablet() {
+                                width: pxConvertor2(178.7);
+                                height: pxConvertor2(178.7);
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .paraBox {
+                            position: absolute;
+                            left: 115%;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto 0;
+                            width: 18vw;
+                            height: fit-content;
+
+                            @include tablet() {
+                                display: none;
+                            }
+
+
+                            h6 {
+                                width: fit-content;
+                                color: #1a1a1a;
+                                font-size: pxConvertor(24);
+                                letter-spacing: 0.2em;
+                                font-weight: 500;
+                            }
+
+                            p {
+                                line-height: 1.7;
+                                @include para();
+                            }
+                        }
+
+
+                    }
+                }
+
+                //手機板文字
+                .phone {
+                    position: relative;
+                    width: 80%;
+                    margin-top: 30vw;
+
+                    .box {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        transition: opacity 0.4s;
+                        opacity: 0;
+
+                        h6 {
+                            font-size: pxConvertor2(42);
+                            color: #1a1a1a;
+                            letter-spacing: 0.1em;
+                            font-weight: 600;
+                            text-align: center;
+                            margin-bottom: 3.5vw;
+                        }
+
+                        p {
+                            margin: 0 auto;
+                            text-align: center;
+                            @include para();
+
+                        }
+                    }
+
+                    .box-active {
+                        opacity: 1;
+                    }
+
+                }
+            }
+
+            .gradient-square {
+                pointer-events: none;
+
+                @include tablet() {
+                    display: none;
+                }
+
+                .box {
+                    &:nth-child(1) {
+                        width: pxConvertor(90.33);
+                        height: pxConvertor(174);
+                        left: pxConvertor(208);
+                        top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        width: pxConvertor(90.33);
+                        height: pxConvertor(174);
+                        left: pxConvertor(197);
+                        bottom: -3vw;
+                    }
+
+                    &:nth-child(3) {
+                        width: pxConvertor(90.33);
+                        height: pxConvertor(174);
+                        left: pxConvertor(254);
+                        bottom: -6.5vw;
+                    }
+
+                }
+            }
+        }
+
+        .active {
+            opacity: 1;
+        }
+    }
+}
