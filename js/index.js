@@ -3,16 +3,24 @@ window.onbeforeunload = function () {
 };
 window.onload = function () {
   gsap.registerPlugin(ScrollTrigger);
+  const windowWidth = window.innerWidth;
   //拆字
   splitText(".first-page h2");
   splitText(".first-page .banner-paraBox > :nth-child(2)");
-
-  const homeImgs = [
+  let homeImgs = [
     "../../img/index/home-bg@2x.webp",
     "../../img/index/home-bg-2@2x.webp",
     "../../img/index/home-bg-3@2x.webp",
     "../../img/index/home-bg-4@2x.webp",
   ];
+  if (windowWidth <= 1440) {
+    homeImgs = [
+      "../../img/index/home-bg@2x1.6.webp",
+      "../../img/index/home-bg-2@2x1.6.webp",
+      "../../img/index/home-bg-3@2x1.6.webp",
+      "../../img/index/home-bg-4@2x1.6.webp",
+    ];
+  }
   let homeImg;
   const initNumber = Math.random().toFixed(1) * 10;
   const getNumber = (0 + initNumber + 4) % 4;
