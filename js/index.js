@@ -12,6 +12,7 @@ window.onload = function () {
     "./img/index/home-bg-2@2x.webp",
     "./img/index/home-bg-3@2x.webp",
     "./img/index/home-bg-4@2x.webp",
+    "./img/index/img.webp",
   ];
   if (windowWidth <= 1440) {
     homeImgs = [
@@ -19,11 +20,12 @@ window.onload = function () {
       "./img/index/home-bg-2@2x1.6.webp",
       "./img/index/home-bg-3@2x1.6.webp",
       "./img/index/home-bg-4@2x1.6.webp",
+      "./img/index/img1.6.webp",
     ];
   }
   let homeImg;
   const initNumber = Math.random().toFixed(1) * 10;
-  const getNumber = (0 + initNumber + 4) % 4;
+  const getNumber = (0 + initNumber + 5) % 5;
   switch (getNumber) {
     case 0:
       homeImg = homeImgs[0];
@@ -36,6 +38,9 @@ window.onload = function () {
       break;
     case 3:
       homeImg = homeImgs[3];
+      break;
+    case 4:
+      homeImg = homeImgs[4];
       break;
     default:
       homeImg = homeImgs[0];
