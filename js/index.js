@@ -54,9 +54,7 @@ window.onload = function () {
       pinSpacing: false,
     });
 
-    const testTl = gsap.timeline({
-      delay: 0.25,
-    });
+    const testTl = gsap.timeline();
 
     testTl
       .from(".home-test-start-inner .left-line", {
