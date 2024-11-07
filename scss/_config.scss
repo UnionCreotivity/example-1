@@ -340,7 +340,7 @@
   width: 100%;
   height: 100%;
   opacity: 1;
-  background-image: url(../../img/index/jpg/gray-bg.jpg);
+  background-image: url("./img/index/jpg/gray-bg.jpg");
   background-size: 105% 100%;
   background-repeat: no-repeat;
 }
@@ -544,7 +544,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url("/img/index/webp/index-bg.webp");
+  background-image: url("./img/index/webp/index-bg.webp");
   background-repeat: repeat;
   background-size: 100% 100%;
   background-color: #fff;
