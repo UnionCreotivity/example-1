@@ -626,7 +626,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url("/img/index/webp/index-bg.webp");
+  background-image: url("../../img/index/webp/index-bg.webp");
   background-repeat: repeat;
   background-size: 100% 100%;
   background-color: #fff;
@@ -745,7 +745,7 @@ select:-webkit-autofill:focus {
 .index .home-bottom {
   position: relative;
   width: 100%;
-  background-image: url("/img/index/webp/index-bg.webp");
+  background-image: url("../../img/index/webp/index-bg.webp");
   background-repeat: repeat;
   background-size: 100% 100%;
   background-color: white;
@@ -874,7 +874,7 @@ select:-webkit-autofill:focus {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  background: url("./img/index/home-bg@2x.webp");
+  background: url("../../img/index/home-bg@2x.webp");
   background-size: 100vw auto;
   background-repeat: no-repeat;
 }
