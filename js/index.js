@@ -8,17 +8,17 @@ window.onload = function () {
   splitText(".first-page h2");
   splitText(".first-page .banner-paraBox > :nth-child(2)");
   let homeImgs = [
-    "img/index/home-bg@2x.webp",
-    "img/index/home-bg-2@2x.webp",
-    "img/index/home-bg-3@2x.webp",
-    "img/index/home-bg-4@2x.webp",
+    "/img/index/home-bg@2x.webp",
+    "/img/index/home-bg-2@2x.webp",
+    "/img/index/home-bg-3@2x.webp",
+    "/img/index/home-bg-4@2x.webp",
   ];
   if (windowWidth <= 1440) {
     homeImgs = [
-      "img/index/home-bg@2x1.6.webp",
-      "img/index/home-bg-2@2x1.6.webp",
-      "img/index/home-bg-3@2x1.6.webp",
-      "img/index/home-bg-4@2x1.6.webp",
+      "/img/index/home-bg@2x1.6.webp",
+      "/img/index/home-bg-2@2x1.6.webp",
+      "/img/index/home-bg-3@2x1.6.webp",
+      "/img/index/home-bg-4@2x1.6.webp",
     ];
   }
   let homeImg;
