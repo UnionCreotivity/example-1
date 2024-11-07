@@ -1,41 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124.8 46.72">
-  <defs>
-    <style>
-      .cls-1 {
-        letter-spacing: .25em;
-      }
-
-      .cls-2 {
-        letter-spacing: .2em;
-      }
-
-      .cls-3 {
-        font-family: NotoSansTC-Regular, 'Noto Sans TC';
-        font-size: 24px;
-        font-variation-settings: 'wght' 400;
-        letter-spacing: .05em;
-      }
-
-      .cls-3, .cls-4 {
-        fill: #fff;
-      }
-
-      .cls-5 {
-        letter-spacing: .25em;
-      }
-
-      .cls-4 {
-        font-family: CormorantGaramond-Medium, 'Cormorant Garamond';
-        font-size: 12px;
-        font-weight: 500;
-      }
-    </style>
-  </defs>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.67 46.27">
   <g id="_圖層_1-2" data-name="圖層 1">
     <g>
-      <text class="cls-3" transform="translate(0 21.12)"><tspan x="0" y="0">房角石建設</tspan></text>
-      <text class="cls-4" transform="translate(4.07 43.32)"><tspan class="cls-1" x="0" y="0">CAME</tspan><tspan class="cls-2" x="45.29" y="0">R</tspan><tspan class="cls-5" x="55.9" y="0">OCERAS</tspan></text>
+      <text transform="translate(0 21.12)" fill="#fff" font-size="24" letter-spacing=".05em"><tspan x="0" y="0">房角石建設</tspan></text>
+      <text transform="translate(.91 39.74) scale(.96 1)" fill="#fff" font-family="CormorantGaramond-Medium, &apos;Cormorant Garamond&apos;" font-size="12.52"><tspan x="0" y="0" letter-spacing=".27em">F</tspan><tspan x="9.76" y="0" letter-spacing=".29em">ANG JI</tspan><tspan x="69.74" y="0" letter-spacing=".28em">A</tspan><tspan x="82.06" y="0" letter-spacing=".29em">O SHI</tspan></text>
     </g>
   </g>
 </svg>
