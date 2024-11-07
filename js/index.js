@@ -508,7 +508,7 @@ window.onload = function () {
           ScrollTrigger.config({ ignoreMobileResize: true });
         }
       }
-      onLoad();
+      // onLoad();
     }
 
     function bannerInAnimation() {
