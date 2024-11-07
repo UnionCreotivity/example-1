@@ -5266,7 +5266,7 @@ select:-webkit-autofill:focus {
 
 body {
   overflow: auto;
-  background-image: url("./img/index/webp/index-bg.webp");
+  background-image: url("/img/index/webp/index-bg.webp");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;
@@ -5298,7 +5298,7 @@ body > canvas {
 }
 @media all and (max-width: 820px) {
   body {
-    background-image: url("./img/index/webp/index-bg-ph.jpg");
+    background-image: url("/img/index/webp/index-bg-ph.jpg");
   }
 }
 
