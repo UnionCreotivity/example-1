@@ -2,17 +2,53 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 window.onload = function () {
+  gsap.registerPlugin(ScrollTrigger);
   //拆字
   splitText(".first-page h2");
   splitText(".first-page .banner-paraBox > :nth-child(2)");
 
+  const homeImgs = [
+    "../../img/index/home-bg@2x.webp",
+    "../../img/index/home-bg-2@2x.webp",
+    "../../img/index/home-bg-3@2x.webp",
+    "../../img/index/home-bg-4@2x.webp",
+  ];
+  let homeImg;
+  const initNumber = Math.random().toFixed(1) * 10;
+  const getNumber = (0 + initNumber + 4) % 4;
+  switch (getNumber) {
+    case 0:
+      homeImg = homeImgs[0];
+      break;
+    case 1:
+      homeImg = homeImgs[1];
+      break;
+    case 2:
+      homeImg = homeImgs[2];
+      break;
+    case 3:
+      homeImg = homeImgs[3];
+      break;
+    default:
+      homeImg = homeImgs[0];
+      break;
+  }
+  $(".home-test-item-inner").css("background-image", `url(${homeImg})`);
   function testAnimation() {
     const scene = document
       .querySelectorAll(".layer-container")
       .forEach((item) => {
         const parallaxInstance = new Parallax(item);
       });
-    const testTl = gsap.timeline({ delay: 0.5 });
+    ScrollTrigger.create({
+      trigger: ".first-page",
+      pin: true,
+      pinSpacing: false,
+    });
+
+    const testTl = gsap.timeline({
+      delay: 0.25,
+    });
 
     testTl
       .from(".home-test-start-inner .left-line", {
@@ -25,19 +61,101 @@ window.onload = function () {
           x: "250%",
           duration: 2,
         },
-        "<"
+        "<-0.5"
       )
-      .from(".home-test", {
-        opacity: 0,
-      })
-      .to(".home-test-start", {
-        display: "none",
-      })
-      .from(".home-test-item-inner", {
-        x: "105%",
-        stagger: 0.05,
-        duration: 1,
-      });
+      .to(
+        ".home-test-start",
+        {
+          display: "none",
+        },
+        "<+1.75"
+      )
+      .from(
+        ".home-test",
+        {
+          opacity: 0,
+        },
+        "<+0.2"
+      )
+      .from(
+        ".home-test-item-7 .layer-container",
+        {
+          x: "105%",
+          opacity: 0,
+          ease: "power29ut",
+          duration: 1,
+        },
+        "<+0.1"
+      )
+      .from(
+        ".home-test-item-4 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.035"
+      )
+      .from(
+        ".home-test-item-1 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.035"
+      )
+      .from(
+        ".home-test-item-5 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.025"
+      )
+      .from(
+        ".home-test-item-2 .layer-container,.home-test-item-8 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.075"
+      )
+      .from(
+        ".home-test-item-6 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.015"
+      )
+      .from(
+        ".home-test-item-3 .layer-container,.home-test-item-9 .layer-container",
+        {
+          x: "95%",
+          opacity: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<+0.065"
+      )
+      .from(
+        ".banner-paraBox img",
+        {
+          y: "105%",
+          ease: "power4.out",
+          duration: 1,
+        },
+        "<+0.25"
+      );
   }
   testAnimation();
 
@@ -91,7 +209,7 @@ window.onload = function () {
       //   sliceImage();
       const firstStart = loadingOut();
       firstStart.then(() => {
-        bannerInAnimation();
+        // bannerInAnimation();
       });
 
       window.addEventListener("resize", () => {

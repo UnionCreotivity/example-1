@@ -20,12 +20,13 @@
 
 body {
   // overflow: hidden;
+  overflow: auto;
   background-image: url("../../img/index/webp/index-bg.webp");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;
   min-height: 100vh;
-
+  background-color: white;
   > canvas {
     position: fixed;
     width: 100%;
