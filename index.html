@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.6/pixi.min.js"></script>
-    <title>石云建設DEMO</title>
+    <title>房角石建設DEMO</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.css"
@@ -22,7 +22,11 @@
 
   <body>
     <div id="loading-page">
-      <div class="svgBox" style="clip-path: url(#logo-path)">
+      <div class="svgBox">
+        <img src="./img/index/房角石LOGO.svg" />
+        <!-- <div class="loading-progress"></div> -->
+      </div>
+      <!-- <div class="svgBox" style="clip-path: url(#logo-path)">
         <svg
           width="1"
           height="1"
@@ -40,13 +44,13 @@
           </defs>
         </svg>
         <div class="loading-progress"></div>
-      </div>
-      <div
+      </div> -->
+      <!-- <div
         class="svgBox"
         style="clip-path: url(#logo-path); transform: rotateX(180deg)"
       >
         <div class="loading-progress"></div>
-      </div>
+      </div> -->
     </div>
     <header id="header">
       <a href="#">
@@ -1386,5 +1390,15 @@
     <script src="./js/index.js"></script>
     <!-- <script src="./js/pixi3.0.7.js"></script>
     <script src="./js/pixi-fog.js"></script> -->
+    <script>
+      $(window).on("scroll", function (item) {
+        const test = document.documentElement.scrollTop;
+        if (test > 0) {
+          $("#header").addClass("header-active");
+        } else {
+          $("#header").removeClass("header-active");
+        }
+      });
+    </script>
   </body>
 </html>
