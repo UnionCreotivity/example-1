@@ -83,7 +83,7 @@
 
   a {
     display: flex;
-    width: pxConvertor(135);
+    width: 6vw;
 
     @include tablet() {
       width: pxConvertor2(135.1);

@@ -58,7 +58,7 @@
 }
 #header a {
   display: flex;
-  width: 7.03125vw;
+  width: 6vw;
 }
 @media all and (max-width: 820px) {
   #header a {
