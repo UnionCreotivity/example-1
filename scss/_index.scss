@@ -1,5 +1,6 @@
 .index {
   position: relative;
+
   // z-index: 5;
   .home-bottom {
     position: relative;
@@ -231,7 +232,7 @@
           height: 100vh;
           left: -1px;
           top: 0px;
-          background-color: white;
+          background-color: #8d8d8d;
           //   animation: topToBottom 2s forwards;
         }
         .bottom-line {
@@ -240,7 +241,7 @@
           height: 1px;
           left: 0;
           top: -1px;
-          background-color: white;
+          background-color: #8d8d8d;
           //   animation: rightToLeft 2s forwards;
         }
         // &::before {
@@ -970,3 +971,85 @@
     }
   }
 }
+
+
+.video-section {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 103;
+  filter: blur(0px) brightness(1);
+
+  video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: -70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-color: #49494954;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+  }
+
+  a:hover {
+    transform: translateY(-15px);
+  }
+
+  .speaker {
+    width: 1.5vw;
+    position: absolute;
+    right: 1.5vw;
+    bottom: 1.5vw;
+    cursor: pointer;
+
+    @include tablet() {
+        width: 5vw;
+        right: auto;
+        left: 0.5vw;
+        bottom: auto;
+        top: 2vw;
+    }
+
+    @media (max-width: 500px) {
+        width: 6.5vw;
+        left: 4vw;
+        top: 4.5vw;
+    }
+
+    img {
+      display: none;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .active {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+

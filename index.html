@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/all.css?1" />
     <style></style>
   </head>
 
@@ -52,6 +52,16 @@
         <div class="loading-progress"></div>
       </div> -->
     </div>
+
+    <section class="video-section">
+      <a href="javascript:;" class="ui-link">skip</a>
+      <video autoplay="" class="video" loop="" muted="" playsinline="" src="video/index1.mp4"></video>
+      <!-- <div class="speaker">
+        <img class="off active" src="https://ws.srl.tw/cs/2023041711471618/img/img2023042410181346.svg">
+        <img class="on" src="https://ws.srl.tw/cs/2023041711471618/img/img2023042410182038.svg">
+      </div> -->
+    </section>
+
     <header id="header">
       <a href="#">
         <img src="./img/index/房角石LOGO.svg" />
@@ -296,11 +306,21 @@
           <div class="right">
             <div class="paraBox">
               <h2 class="en-title">BRAND CONCEPT</h2>
-              <h4>匠心築夢 品質為基</h4>
+              <!-- <h4>匠心築夢 品質為基</h4>
               <p>
                 房角石建設秉持匠心精神，致力於打造每一處完美的居住空間。
                 我們相信，優質的建築始於嚴謹的工藝與細節的把控，從選材到施工，每一步都追求極致品質。堅守誠信穩健的核心價值，以使用者為中心，創造安全、舒適的生活環境。以精工細作的工藝為根基，結合現代美學設計，房角石建設不僅是在蓋房子，更是在為每一位住戶構築夢想中的家園。
-              </p>
+              </p> -->
+              <div style="margin-bottom: 5%;">
+                <h4>房角石精神</h4>
+                <p>看哪，我在錫安放一塊石頭作為根基，是試驗過的石頭，是穩固根基，寶貴的房角石，信靠的人必不著急。我必以公平為準繩，以公義為線鉈 。</p>
+                <p style="text-align: right;">- 以賽亞書 28:16-17</p>
+              </div>
+              <div>
+                <h4>以房角石之名<br>持續追尋幸福基石的建築求道者</h4>
+                <p>我們用心思考，幸福房子，應該是甚麼樣子.........</p>
+              </div>
+          
             </div>
           </div>
           <div class="gradient-square">
@@ -1399,6 +1419,20 @@
           $("#header").removeClass("header-active");
         }
       });
+
+
+      let nowURL=new URL(location.href);
+      if(nowURL.searchParams.get('video')==1){
+        $('.video-section video').attr('src', 'video/index1.mp4');
+      }
+      else if(nowURL.searchParams.get('video')==2){
+        $('.video-section video').attr('src', 'video/index2.mp4');
+      }
+      else if(nowURL.searchParams.get('video')==3){
+        $('.video-section video').attr('src', 'video/index3.mp4');
+      }
+
+    
     </script>
   </body>
 </html>

@@ -47,6 +47,37 @@ window.onload = function () {
       break;
   }
   $(".home-test-item-inner").css("background-image", `url(${homeImg})`);
+
+
+    const cut1Tl = gsap.timeline();
+    $(".video-section a").click(function (e) {
+      e.preventDefault();
+      // video.muted = true;
+            cut1Tl
+              .to(".video-section", 1, 
+                { 
+                  filter: "blur(15px) brightness(4)" ,
+                  onComplete: function () {
+                    testAnimation();
+                  }
+                })
+              .to(".video-section", 1, { opacity: 0 }, "<+=0.9")
+              .to(".video-section", 1, { visibility: "hidden",})
+              .from( ".cut-1-1 img,.cut-1-2 img,.cut-1-3 img,.cut-1-4 img,.cut-1-5 img",
+                {
+                  opacity: "0",
+                  y: "-105%",
+                  stagger: "0.3",
+                  duration: 1,
+                  
+                },
+                "<"
+              );
+
+              
+    });
+
+
   function testAnimation() {
     const scene = document
       .querySelectorAll(".layer-container")
@@ -168,7 +199,7 @@ window.onload = function () {
         "<+0.25"
       );
   }
-  testAnimation();
+  
 
   function pixiSplit() {
     const container = document.querySelector(".first-page");

@@ -937,7 +937,7 @@ select:-webkit-autofill:focus {
   height: 100vh;
   left: -1px;
   top: 0px;
-  background-color: white;
+  background-color: #8d8d8d;
 }
 .index .first-page .home-test-start .home-test-start-item .bottom-line {
   position: absolute;
@@ -945,7 +945,7 @@ select:-webkit-autofill:focus {
   height: 1px;
   left: 0;
   top: -1px;
-  background-color: white;
+  background-color: #8d8d8d;
 }
 @keyframes topToBottom {
   0% {
@@ -1581,6 +1581,77 @@ select:-webkit-autofill:focus {
   height: 7.2916666667vw;
   right: 17.5520833333vw;
   bottom: 7.5vw;
+}
+
+.video-section {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 103;
+  filter: blur(0px) brightness(1);
+}
+.video-section video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.video-section a {
+  position: absolute;
+  top: 0;
+  bottom: -70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(73, 73, 73, 0.3294117647);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  text-decoration: none;
+  transition: 0.5s;
+  color: white;
+}
+.video-section a:hover {
+  transform: translateY(-15px);
+}
+.video-section .speaker {
+  width: 1.5vw;
+  position: absolute;
+  right: 1.5vw;
+  bottom: 1.5vw;
+  cursor: pointer;
+}
+@media all and (max-width: 820px) {
+  .video-section .speaker {
+    width: 5vw;
+    right: auto;
+    left: 0.5vw;
+    bottom: auto;
+    top: 2vw;
+  }
+}
+@media (max-width: 500px) {
+  .video-section .speaker {
+    width: 6.5vw;
+    left: 4vw;
+    top: 4.5vw;
+  }
+}
+.video-section .speaker img {
+  display: none;
+  width: 100%;
+  pointer-events: none;
+}
+.video-section .speaker .active {
+  display: block;
+  width: 100%;
 }
 
 .news {
@@ -5357,4 +5428,4 @@ body > canvas {
     rotate: 140deg;
     opacity: 0;
   }
-}/*# sourceMappingURL=all.css.map */
+}
